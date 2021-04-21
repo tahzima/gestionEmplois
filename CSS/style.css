@@ -1,0 +1,15 @@
+body {
+  background-image: url("../Images/anand-rathod-Gz5AY5HVHBc-unsplash.jpg");
+}
+.bg {
+  width: 100vw;
+  height: 100vh;
+}
+.form-container {
+  border: 0px solid black;
+  padding: 30px 60px;
+  margin-top: 20vh;
+  box-shadow: 2px 0px 32px 10px rgba(239, 112, 112, 1);
+  -webkit-box-shadow: 2px 0px 32px 10px rgba(239, 112, 112, 1);
+  -moz-box-shadow: 2px 0px 32px 10px rgba(239, 112, 112, 1);
+}
