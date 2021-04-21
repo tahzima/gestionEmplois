@@ -21,6 +21,18 @@ class Database
         }
         return $this->db_conn;
     }
+    public function query($var){
+        $this->query=$this->con->prepare($var);
+    }
+    public function execute(){
+        $this->query->execute();
+    }
+    public function selectAll(){
+        return $this->query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function singleligne(){
+        return $this->query->rowCount();
+    }
 }
 
 ?>
