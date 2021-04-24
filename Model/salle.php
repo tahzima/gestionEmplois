@@ -1,5 +1,5 @@
 <?php 
-class Salle{
+class salle{
     private $idSalle;
     private $libelleSalle;
     private $capaciteSalle;
