@@ -22,10 +22,15 @@
                     <a class="nav-link "  href="http://localhost/gestionEmplois/home/">Salle</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="groupe.html">Groupe</a>
+                    <a class="nav-link" href="http://localhost/gestionEmplois/groupe/">Groupe</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="matiere.html" >Matiere</a>
+                    <a class="nav-link " href="" >Matiere</a>
+                  </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="nav-item">
+                    <a  class="nav-link " href="http://localhost/gestionEmplois/logout/">logout</a>
                   </li>
                 </ul>
             </div>
