@@ -10,3 +10,19 @@
   -webkit-box-shadow: 2px 0px 32px 10px rgba(239, 112, 112, 1);
   -moz-box-shadow: 2px 0px 32px 10px rgba(239, 112, 112, 1);
 }
+.navbar {
+  background-color: #17a2b8;
+  border-radius: 0;
+  border: none;
+  height: 10vh;
+}
+
+.navbar .navbar-nav li a {
+  color: white;
+}
+
+.navbar .navbar-nav li a:hover {
+  border-bottom: 1px solid white;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

@@ -1,26 +1,11 @@
 <?php
-class database{
+class Database{
  
-    private $host = 'localhost';
-    private $username = 'root';
-    private $password = '';
-    private $database = 'gestionemploisdb';
- 
-    protected $connection;
- 
-    public function __construct(){
- 
-        if (!isset($this->connection)) {
- 
-            $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
- 
-            if (!$this->connection) {
-                echo 'Cannot connect to database server';
-                exit;
-            }            
-        }    
- 
-        return $this->connection;
+    static public function connect(){
+        $db = new PDO("mysql:host=localhost;dbname=gestionemploisdb","root","");
+        $db->exec("set names utf8");
+           
+        return $db;
     }
 }
 ?>

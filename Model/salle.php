@@ -1,34 +1,35 @@
 <?php 
-class salle{
-    private $idSalle;
-    private $libelleSalle;
-    private $capaciteSalle;
+class SalleModel{    
+    //function read
+    public function readSalles(){
+        $sql="select * from salle";
+        $query=Database::connect()->query($sql);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    } 
 
-    public function __construct(){
-        $this->db=new Database();
+    //function read
+    public function readSallesById($id){
+        $sql="SELECT * FROM salle WHERE idSalle=$id";
+        $query=Database::connect()->query($sql);
+        $result= $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result[0];
     }
 
-    //function insertSalle
-    public function createSalle($libelleSalle,$capaciteSalle){
-        $this->libelleSalle=$libelleSalle;
-        $this->capaciteSalle=$capaciteSalle;
-        $this->db->query("INSERT INTO `salle`(`libeleSalle`, `capaciteSalle`) VALUES ('".$this->libelleSalle."','".$this->capaciteSalle."')");
-        $this->db->execute();
+    //function add
+    public function save($libelle,$capacite){
+        $sql="INSERT INTO salle(`libelleSalle`, `capaciteSalle`) VALUES ('$libelle',$capacite)";
+        Database::connect()->query($sql);
     }
-
-    //function updateSalle
-    public function updateSalle($idSalle,$libelleSalle,$capaciteSalle){
-        $this->idSalle=$idSalle;
-        $this->libelleSalle=$libelleSalle;
-        $this->capaciteSalle=$capaciteSalle;
-        $this->db->query("UPDATE `salle` SET `libeleSalle`='".$this->libelleSalle."' , `capaciteSalle`='".$this->capaciteSalle."' WHERE `idSalle`='".$this->idSalle."'");
-        $this->db->execute();
+    
+    //function delete
+    public function delete($id){
+        $sql="DELETE FROM salle WHERE idSalle=$id";
+        Database::connect()->query($sql);
     }
-
-    //function deleteSalle
-    public function deleteSalle($idSalle){
-        $this->idSalle=$idSalle;
-        $this->db->query("DELETE FROM `salle` WHERE `idSalle`='".$this->idSalle."'");
-        $this->db->execute();
+    
+    //function edit
+    public function edit($id,$libelle,$capacite){
+        $sql="UPDATE salle SET libelleSalle='$libelle',capaciteSalle='$capacite' WHERE idSalle = $id";
+        $query=Database::connect()->query($sql);
     }
 }
