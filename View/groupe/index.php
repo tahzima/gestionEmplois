@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__."/../../controller/home.php";
-require_once __DIR__."/../../model/salle.php";
+require_once __DIR__."/../../model/groupe.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,5 +40,35 @@ require_once __DIR__."/../../model/salle.php";
               </div>
             </div>
     </nav>
+    <div class="container mt-4">
+      <h1 class="text-center">Groupe</h1>
+      <a class="btn btn-primary float-end mb-4" id="open" href="http://localhost/gestionEmplois/groupe/addPage"><b>Ajouter Groupe</b></a>
+      <div class="row col-md-12 col-md-offset-2 custyle">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nom de groupe</th>
+              <th>Effectif de groupe</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              $groupe= new GroupeModel();
+              $result = $groupe->readGroupe();
+              foreach($result as $row){ ?>
+                <tr>
+                  <td><?=$row['libelleGroupe']?></td>
+                  <td><?=$row['effectif']?></td>
+                  <td>
+                    <a href="http://localhost/gestionEmplois/groupe/rechercherById/<?=$row['idGroupe']?>"  class="btn btn-info">Edite</a> 
+                    <a href="http://localhost/gestionEmplois/groupe/delete/<?=$row['idGroupe']?>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>

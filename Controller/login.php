@@ -9,7 +9,7 @@ class Login
 	}
     function auth()
 	{
-        $admin = new Admin();
+        $admin = new AdminModel();
         if(isset($_POST['email']) && isset($_POST['password'])){
             $email = $_POST['email'];
             $password =$_POST['password'];

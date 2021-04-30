@@ -8,13 +8,19 @@ class Salle
 	{
 		require __DIR__."/../view/salle/index.php";
 	}
-	public function edit($id)
+	// public function rechercher()
+	// {
+	// 	$salle=new SalleModel();
+	// 	$result=$salle->readSalles();
+	// 	header('location:http://localhost/gestionEmplois/home/');
+	// }
+	public function rechercherById($id)
 	{
 		$salle=new SalleModel();
 		$result=$salle->readSallesById($id);
 		require __DIR__."/../view/salle/edit/index.php";	
 	}
-	public function editPage()
+	public function edit()
 	{
 		$salle=new SalleModel();
 		if(isset($_POST['libelle']) && isset($_POST['capacite'])){

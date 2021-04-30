@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__.'/database.php';
  
-class Admin { 
+class AdminModel { 
     public function check_login($email, $password){
  
         $sql = "SELECT * FROM admin WHERE email ='$email' AND password ='$password'";

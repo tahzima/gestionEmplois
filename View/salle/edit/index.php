@@ -47,7 +47,7 @@
                   <div class="row text-white">
                       <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                           <div class="px-2">
-                              <form action="http://localhost/gestionEmplois/salle/editPage" class="justify-content-center" method="POST">
+                              <form action="http://localhost/gestionEmplois/salle/edit" class="justify-content-center" method="POST">
                                   <input type="hidden" class="form-control" id="idSalle" name="idSalle" value="<?=$result['idSalle']?>">
                                   <div class="form-group">
                                       <input type="text" class="form-control" id="libelle" name="libelle" value="<?=$result['libelleSalle']?>">

@@ -4,7 +4,8 @@ class SalleModel{
     public function readSalles(){
         $sql="select * from salle";
         $query=Database::connect()->query($sql);
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        $result= $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     } 
 
     //function read
