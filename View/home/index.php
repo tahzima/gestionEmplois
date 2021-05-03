@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__."/../../controller/home.php";
+require_once __DIR__."/../../controller/salle.php";
 require_once __DIR__."/../../model/salle.php";
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ require_once __DIR__."/../../model/salle.php";
                     <a class="nav-link" href="http://localhost/gestionEmplois/groupe/">Groupe</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="" >Matiere</a>
+                    <a class="nav-link " href="http://localhost/gestionEmplois/matiere/" >Matiere</a>
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -55,7 +55,7 @@ require_once __DIR__."/../../model/salle.php";
           </thead>
           <tbody>
             <?php
-              $salle= new SalleModel();
+		          $salle= new SalleModel();
               $result = $salle->readSalles();
               foreach($result as $row){ ?>
                 <tr>

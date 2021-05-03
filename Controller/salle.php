@@ -1,19 +1,13 @@
 <?php
 require __DIR__.'/../model/salle.php';
-require __DIR__.'/../model/admin.php';
-session_start();
+// require __DIR__.'/../model/admin.php';
+// session_start();
 class Salle
 {
 	public function index()
 	{
 		require __DIR__."/../view/salle/index.php";
 	}
-	// public function rechercher()
-	// {
-	// 	$salle=new SalleModel();
-	// 	$result=$salle->readSalles();
-	// 	header('location:http://localhost/gestionEmplois/home/');
-	// }
 	public function rechercherById($id)
 	{
 		$salle=new SalleModel();

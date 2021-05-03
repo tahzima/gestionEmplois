@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__."/../../controller/home.php";
-require_once __DIR__."/../../model/groupe.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +28,7 @@ require_once __DIR__."/../../model/groupe.php";
                     <a class="nav-link" href="http://localhost/gestionEmplois/groupe/">Groupe</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="" >Matiere</a>
+                    <a class="nav-link " href="http://localhost/gestionEmplois/matiere/" >Matiere</a>
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -54,8 +53,6 @@ require_once __DIR__."/../../model/groupe.php";
           </thead>
           <tbody>
             <?php
-              $groupe= new GroupeModel();
-              $result = $groupe->readGroupe();
               foreach($result as $row){ ?>
                 <tr>
                   <td><?=$row['libelleGroupe']?></td>

@@ -18,14 +18,14 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ">
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link "  href="http://localhost/gestionEmplois/home/">Salle</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="http://localhost/gestionEmplois/groupe/">Groupe</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="" >Matiere</a>
+                    <a class="nav-link " href="http://localhost/gestionEmplois/matiere/" >Matiere</a>
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

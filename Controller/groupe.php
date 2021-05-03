@@ -5,6 +5,8 @@ class Groupe
 {
 	public function index()
 	{
+            $groupe= new GroupeModel();
+            $result = $groupe->readGroupe();
 			require __DIR__."/../view/groupe/index.php";
 	}
 	public function addPage()

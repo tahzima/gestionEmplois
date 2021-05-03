@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJOUTER SALLE</title>
+    <title>MODIFIER GROUPE</title>
     <link rel="stylesheet" href="http://localhost/gestionEmplois/view/css/style.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,13 +18,13 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ">
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link "  href="http://localhost/gestionEmplois/home/">Salle</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="http://localhost/gestionEmplois/groupe/">Groupe</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link " href="http://localhost/gestionEmplois/matiere/" >Matiere</a>
                   </li>
                 </ul>
@@ -37,7 +37,7 @@
         </div>
     </nav>
     <div class="container mt-4">
-      <h1 class="text-center">Ajouter Salle</h1>
+      <h1 class="text-center">Modifier Matiere</h1>
       <br>
       <br>
       <br>
@@ -47,15 +47,13 @@
                   <div class="row text-white">
                       <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                           <div class="px-2">
-                              <form action="http://localhost/gestionEmplois/salle/ajouter" class="justify-content-center" method="POST">
+                              <form action="http://localhost/gestionEmplois/matiere/edit" class="justify-content-center" method="POST">
+                                  <input type="hidden" class="form-control" id="idMatiere" name="idMatiere" value="<?=$result['idMatiere']?>">
                                   <div class="form-group">
-                                      <input type="text" class="form-control" id="libelle" placeholder="Nom de la salle" name="libelle">
-                                  </div>
-                                  <div class="form-group">
-                                      <input type="text" class="form-control" placeholder="Capacite de la salle" name="capacite">
+                                      <input type="text" class="form-control" id="libelleMatiere" name="libelleMatiere" value="<?=$result['libelleMatiere']?>">
                                   </div>
                                   <br>
-                                  <button type="submit" class="btn btn-primary btn-lg">Ajouter</button>
+                                  <button type="submit" class="btn btn-primary btn-lg">Modifier</button>
                               </form>
                           </div>
                       </div>
@@ -66,3 +64,4 @@
     </div>
 </body>
 </html>
+            

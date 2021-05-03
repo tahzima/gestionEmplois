@@ -25,7 +25,7 @@
                     <a class="nav-link" href="http://localhost/gestionEmplois/groupe/">Groupe</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="" >Matiere</a>
+                    <a class="nav-link " href="http://localhost/gestionEmplois/matiere/" >Matiere</a>
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
