@@ -18,10 +18,10 @@ require_once __DIR__."/../../model/groupe.php";
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ">
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
                     <a class="nav-link "  href="http://localhost/gestionEmplois/home/">Salle</a>
                   </li>
@@ -56,7 +56,7 @@ require_once __DIR__."/../../model/groupe.php";
               foreach($result as $row){ ?>
                 <tr>
                   <td><?=$row['libelleMatiere']?></td>
-                  <td>
+                  <td class="text-center">
                     <a href="http://localhost/gestionEmplois/matiere/rechercherById/<?=$row['idMatiere']?>"  class="btn btn-info">Edite</a> 
                     <a href="http://localhost/gestionEmplois/matiere/delete/<?=$row['idMatiere']?>" class="btn btn-danger">Delete</a>
                   </td>

@@ -17,10 +17,10 @@ require_once __DIR__."/../../controller/home.php";
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ">
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
                     <a class="nav-link "  href="http://localhost/gestionEmplois/home/">Salle</a>
                   </li>
@@ -57,7 +57,7 @@ require_once __DIR__."/../../controller/home.php";
                 <tr>
                   <td><?=$row['libelleGroupe']?></td>
                   <td><?=$row['effectif']?></td>
-                  <td>
+                  <td class="text-center">
                     <a href="http://localhost/gestionEmplois/groupe/rechercherById/<?=$row['idGroupe']?>"  class="btn btn-info">Edite</a> 
                     <a href="http://localhost/gestionEmplois/groupe/delete/<?=$row['idGroupe']?>" class="btn btn-danger">Delete</a>
                   </td>

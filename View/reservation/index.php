@@ -19,13 +19,7 @@
               <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link "  href="http://localhost/gestionEmplois/home/">Salle</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/gestionEmplois/groupe/">Groupe</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link " href="http://localhost/gestionEmplois/matiere/" >Matiere</a>
+                    <a class="nav-link "  href="http://localhost/gestionEmplois/reservation/">reservation</a>
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -36,34 +30,39 @@
               </div>
             </div>
     </nav>
-
     <div class="container mt-4">
-      <h1 class="text-center">Salle</h1>
-      <a class="btn btn-primary float-end mb-4" id="open" href="http://localhost/gestionEmplois/salle/"><b>Ajouter Salle</b></a>
+      <h1 class="text-center">Reservation</h1>
+      <a class="btn btn-primary float-end mb-4" id="open" href="http://localhost/gestionEmplois/reservation/addPage"><b>Ajouter Reservation</b></a>
       <div class="row col-md-12 col-md-offset-2 custyle">
         <table class="table">
           <thead>
             <tr>
-              <th>Nom de salle</th>
-              <th>Capaciter de salle</th>
+              <th>Enseignant</th>
+              <th>Groupe</th>
+              <th>Salle</th>
+              <th>Date</th>
+              <th>Heure</th>
               <th class="text-center">Action</th>
             </tr>
           </thead>
           <tbody>
-            <?php
-              foreach($result as $row){ ?>
-                <tr>
-                  <td><?=$row['libelleSalle']?></td>
-                  <td><?=$row['capaciteSalle']?></td>
-                  <td class="text-center">
-                    <a href="http://localhost/gestionEmplois/salle/rechercherById/<?=$row['idSalle']?>"  class="btn btn-info">Edite</a> 
-                    <a href="http://localhost/gestionEmplois/salle/delete/<?=$row['idSalle']?>" class="btn btn-danger">Delete</a>
-                  </td>
-                </tr>
+          <?php
+              foreach($resultaffichage as $row){ ?>
+            <tr>
+                <td><?=$row['nom']?> <?=$row['prenom']?></td>
+                <td><?=$row['libelleGroupe']?></td>
+                <td><?=$row['libelleSalle']?></td>
+                <td><?=$row['date']?></td>
+                <td><?=$row['heureDebut']?>--><?=$row['heureFin']?></td>
+                <td class="text-center">
+                  <a href="http://localhost/gestionEmplois//<?=$row['id']?>"  class="btn btn-info">Edite</a> 
+                  <a href="http://localhost/gestionEmplois/reservation/delete/<?=$row['id']?>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
             <?php } ?>
           </tbody>
         </table>
       </div>
-    </div> 
+    </div>
   </body>
 </html>

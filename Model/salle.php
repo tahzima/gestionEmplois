@@ -33,4 +33,12 @@ class SalleModel{
         $sql="UPDATE salle SET libelleSalle='$libelle',capaciteSalle='$capacite' WHERE idSalle = $id";
         $query=Database::connect()->query($sql);
     }
+    
+    //function disponibilite
+    public function disponibilite($id,$hd,$date){
+        $sql="SELECT * from cours where idSalle=$id AND heureDebut='$hd' AND date='$date'";
+        $query=Database::connect()->query($sql);
+        $result= $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result[0];
+    }
 }

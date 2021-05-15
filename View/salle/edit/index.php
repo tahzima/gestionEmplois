@@ -14,10 +14,10 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
                     <a class="nav-link "  href="http://localhost/gestionEmplois/home/">Salle</a>
                   </li>
@@ -33,8 +33,8 @@
                     <a  class="nav-link " href="http://localhost/gestionEmplois/logout/">logout</a>
                   </li>
                 </ul>
+              </div>
             </div>
-        </div>
     </nav>
     <div class="container mt-4">
       <h1 class="text-center">Modifier Salle</h1>
