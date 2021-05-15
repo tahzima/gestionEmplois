@@ -18,20 +18,39 @@
         <div class="row">
             <div class="col-4"></div>
             <div class="col-md-4">
-                <form class="form-container" method="POST" action="http://localhost/gestionEmplois/login/auth">
+                <form class="form-container" method="POST" action="http://localhost/gestionEmplois/inscription/ajouter">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Nom</label>
+                        <input type="text" class="form-control" name="nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Prenom</label>
+                        <input type="text" class="form-control" name="prenom">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">CIN</label>
+                        <input type="text" class="form-control" name="cin">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Email</label>
                         <input type="email" class="form-control" name="email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" name="password">
                     </div>
-                    <div class="form-group custom-control custom-checkbox">
-                        <br>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Matiere</label><br>
+                        <select class="form-control" name="matiere">
+                            <option selected></option>
+                            <?php
+                                foreach($result as $row){ ?>
+                                <option value="<?=$row['idMatiere']?>"><?=$row['libelleMatiere']?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
-                    <a href="http://localhost/gestionEmplois/inscription/"><input type="button" class="btn btn-success" name="inscription" value="Inscription"></a>
+                    <a href="http://localhost/gestionEmplois/login/"><input type="button" class="btn btn-success" name="Login" value="Login"></a>
                 </form>
             </div>
             <div class="col-4"></div>
