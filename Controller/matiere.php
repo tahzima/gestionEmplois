@@ -5,9 +5,18 @@ class Matiere
 {
 	public function index()
 	{
-		$matiere= new MatiereModel();
-        $result = $matiere->readMatiere();
-		require __DIR__."/../view/matiere/index.php";
+		session_start();
+		if(isset($_SESSION["idUser"]) && !empty($_SESSION["idUser"])){
+			if($_SESSION["role"]=="admin"){
+				$matiere= new MatiereModel();
+				$result = $matiere->readMatiere();
+				require __DIR__."/../view/matiere/index.php";
+			}else{
+				header('location:http://localhost/gestionEmplois/reservation/');
+			}
+		}else{
+			header('location:http://localhost/gestionEmplois/');
+		}
 	}
 	public function addPage()
 	{

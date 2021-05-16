@@ -2,13 +2,14 @@
 require __DIR__.'/../model/matiere.php';
 require __DIR__.'/../model/inscription.php';
 require __DIR__.'/../model/database.php';
+
 class Inscription
 {
 	public function index()
 	{
-            $matiere= new MatiereModel();
-            $result = $matiere->readMatiere();
-			require __DIR__."/../view/inscription/index.php";
+        $matiere= new MatiereModel();
+        $result = $matiere->readMatiere();
+		require __DIR__."/../view/inscription/index.php";
 	}
 	public function ajouter()
 	{

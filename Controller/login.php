@@ -1,14 +1,15 @@
 <?php
 require __DIR__.'/../model/user.php';
-session_start();
 class Login
 {
 	public function index()
 	{
+        // session_start();
 		require __DIR__."/../view/login/index.php";
 	}
     function auth()
 	{
+        session_start();
         $admin = new UserModel();
         if(isset($_POST['email']) && isset($_POST['password'])){
             $email = $_POST['email'];

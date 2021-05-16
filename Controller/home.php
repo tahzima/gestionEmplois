@@ -1,10 +1,12 @@
 <?php
 require __DIR__.'/../controller/login.php';
 require __DIR__.'/../model/salle.php';
+
 class Home
 {
 	public function index()
 	{
+		session_start();
 		if(isset($_SESSION["idUser"]) && !empty($_SESSION["idUser"])){
 			if($_SESSION["role"]=="admin"){
 		        $salle= new SalleModel();

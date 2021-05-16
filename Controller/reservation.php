@@ -3,15 +3,22 @@ require __DIR__.'/../model/database.php';
 require __DIR__.'/../model/reservation.php';
 require __DIR__.'/../model/groupe.php';
 require __DIR__.'/../model/salle.php';
-session_start();
 class Reservation
 {
 	public function index()
 	{
-		$reservation= new ReservationModel();
-        $resultaffichage = $reservation->readReservation();
-		
-		require __DIR__."/../view/reservation/index.php";
+		session_start();
+		if(isset($_SESSION["idUser"]) && !empty($_SESSION["idUser"])){
+			if($_SESSION["role"]=="admin"){
+				header('location:http://localhost/gestionEmplois/matiere');
+			}else{
+				$reservation= new ReservationModel();
+				$resultaffichage = $reservation->readReservation();
+				require __DIR__."/../view/reservation/index.php";
+			}
+		}else{
+			header('location:http://localhost/gestionEmplois/');
+		}
 	}
 	public function addPage($errorSalle="",$errorGroupe="",$errorDate="",$errorHeure="")
 	{

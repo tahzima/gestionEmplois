@@ -1,7 +1,6 @@
 <?php
 require __DIR__.'/../model/salle.php';
 require __DIR__.'/../model/user.php';
-// session_start();
 class Salle
 {
 	public function index()
