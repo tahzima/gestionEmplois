@@ -21,16 +21,16 @@ class Reservation
 		}
 	}
 	public function addPage($errorSalle="",$errorGroupe="",$errorDate="",$errorHeure="")
-	{
-		
+	{	
 		$groupe= new GroupeModel();
-        $resultGroupe = $groupe->readGroupe();
 		$salle=new SalleModel();
+        $resultGroupe = $groupe->readGroupe();
 		$resultSalle=$salle->readSalles();
 		require __DIR__."/../view/reservation/add/index.php";
 	}
 	public function ajouter()
 	{
+		session_start();
 	 	$reservation=new ReservationModel();
 	 	$salle=new salleModel();
 	 	$groupe=new groupeModel();
@@ -48,9 +48,6 @@ class Reservation
 					if($myGroupe["effectif"]<=$mySalle["capaciteSalle"]){
 						$mySalle1=$salle->disponibilite($idSalle,$hd,$date);
 						if(isset($mySalle1['id'])){
-							// // echo "no";
-							// echo "<script>alert('la salle deja reservée')</script>";
-							// header('location:http://localhost/gestionEmplois/reservation/addPage');
 							$this->addPage("la salle deja reservée","","la date deja reservée","l'heure deja reservée");
 						}else{
 							$reservation->save($idUser,$idSalle,$idGroupe,$date,$hd,$hf);
@@ -58,14 +55,10 @@ class Reservation
 						}
 					}			
 					else{
-						// echo "<script>alert('la salle ne support pas ce groupe')</script>";
 						$this->addPage("","la salle ne support pas ce groupe","","");
-						header('location:http://localhost/gestionEmplois/reservation/addPage');
 					}		
 				}else{
-					// echo "<script>alert('date non valide')</script>";
 					$this->addPage("","","date non valide","");
-					header('location:http://localhost/gestionEmplois/reservation/addPage');
 				}
 			}
 		}
@@ -76,4 +69,10 @@ class Reservation
 		$reservation->delete($id);
 		header('location:http://localhost/gestionEmplois/reservation/');
 	}
+	public function editpage($id){
+		// $matiere=new MatiereModel();
+		// $result=$matiere->readMatiereById($id);
+		require __DIR__."/../view/reservation/edit/index.php";
+	}
 }
+?>

@@ -11,9 +11,11 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/0407d298dc.js" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 </head>
 <body>
+    <script src="http://localhost/gestionEmplois/view/js/myJS.js"></script>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
               <div class="collapse navbar-collapse" id="navbarText">
@@ -46,18 +48,20 @@
               <div class="container">
                   <div class="row text-white">
                       <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-                          <div class="px-2">
-                              <form action="http://localhost/gestionEmplois/salle/ajouter" class="justify-content-center" method="POST">
-                                  <div class="form-group">
-                                      <input type="text" class="form-control" id="libelle" placeholder="Nom de la salle" name="libelle">
-                                  </div>
-                                  <div class="form-group">
-                                      <input type="text" class="form-control" placeholder="Capacite de la salle" name="capacite">
-                                  </div>
-                                  <br>
-                                  <button type="submit" class="btn btn-primary btn-lg">Ajouter</button>
-                              </form>
-                          </div>
+                        <div class="px-2">
+                          <form method="post" id="form" action="http://localhost/gestionEmplois/salle/ajouter" >
+                            <div class="row">
+                              <div class="form-group col-md-4 ">
+                                <input type="text" name="libelle" id="libelle" class="form-control" placeholder="Libelle Salle">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <input type="nom" name="capacite" id="capacite" class="form-control" placeholder="Capacite Salle">
+                              </div>
+                              <button class="btn mb-2 add" onclick="addSalle()"><i class="fas fa-plus-square"></i></button>
+                              <button type="submit" class="btn  btn-primary mb-2 add" name="add">Envoyer</button>
+                            </div>
+                          </form>
+                        </div>
                       </div>
                   </div>
               </div>

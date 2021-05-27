@@ -1,8 +1,9 @@
-<?php 
+<?php
 class ReservationModel{    
     //function read
     public function readReservation(){
-        $sql="SELECT cours.id,user.nom,user.prenom,groupe.libelleGroupe,salle.libelleSalle,cours.date,cours.heureDebut,cours.heureFin FROM  user,groupe,salle,cours WHERE cours.idUser=user.idUser AND cours.idGroupe=groupe.idGroupe AND cours.idSalle=salle.idSalle";
+        $id=$_SESSION["idUser"];
+        $sql="SELECT cours.id,user.nom,user.prenom,groupe.libelleGroupe,salle.libelleSalle,cours.date,cours.heureDebut,cours.heureFin FROM  user,groupe,salle,cours WHERE cours.idUser=user.idUser AND cours.idGroupe=groupe.idGroupe AND cours.idSalle=salle.idSalle AND cours.idUser=$id";
         $query=Database::connect()->query($sql);
         $result= $query->fetchAll(PDO::FETCH_ASSOC);
         return $result;

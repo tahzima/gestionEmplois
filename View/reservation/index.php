@@ -55,7 +55,7 @@
                 <td><?=$row['date']?></td>
                 <td><?=$row['heureDebut']?>--><?=$row['heureFin']?></td>
                 <td class="text-center">
-                  <a href="http://localhost/gestionEmplois//<?=$row['id']?>"  class="btn btn-info">Edite</a> 
+                  <a href="http://localhost/gestionEmplois/reservation/editpage/<?=$row['id']?>"  class="btn btn-info">Edite</a> 
                   <a href="http://localhost/gestionEmplois/reservation/delete/<?=$row['id']?>" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
