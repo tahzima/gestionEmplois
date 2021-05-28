@@ -30,3 +30,24 @@ function addSalle() {
     alert("Tout les champs sont obligatoires !");
   }
 }
+
+function edit(e) {
+  document.getElementById("labelNomSalle" + e).style.display = "none";
+  document.getElementById("nomSalle" + e).style.display = "block";
+  document.getElementById("labelCapaciteSalle" + e).style.display = "none";
+  document.getElementById("capaciteSalle" + e).style.display = "block";
+  document.getElementById("editButton" + e).style.display = "none";
+  document.getElementById("deleteButton" + e).style.display = "none";
+  document.getElementById("saveButton" + e).style.display = "inline-block";
+  document.getElementById("cancelButton" + e).style.display = "inline-block";
+}
+function cancel(e) {
+  document.getElementById("labelNomSalle" + e).style.display = "block";
+  document.getElementById("nomSalle" + e).style.display = "none";
+  document.getElementById("labelCapaciteSalle" + e).style.display = "block";
+  document.getElementById("capaciteSalle" + e).style.display = "none";
+  document.getElementById("editButton" + e).style.display = "inline-block";
+  document.getElementById("deleteButton" + e).style.display = "inline-block";
+  document.getElementById("saveButton" + e).style.display = "none";
+  document.getElementById("cancelButton" + e).style.display = "none";
+}

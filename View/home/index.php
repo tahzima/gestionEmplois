@@ -50,20 +50,32 @@
             </tr>
           </thead>
           <tbody>
-            <?php
+            <?php $i=1;
               foreach($result as $row){ ?>
+          <form action="http://localhost/gestionEmplois/salle/edit" method="POST">
                 <tr>
-                  <td><?=$row['libelleSalle']?></td>
-                  <td><?=$row['capaciteSalle']?></td>
+                  <td>
+                    <input type="hidden" class="form-control" id="idSalle" name="idSalle" value="<?=$row['idSalle']?>">
+                    <label id="labelNomSalle<?=$i?>"><?=$row['libelleSalle']?></label>
+                    <input type="text" name="libelle" id="nomSalle<?=$i?>" value="<?=$row['libelleSalle']?>" style="display:none">
+                  </td>
+                  <td>
+                    <label id="labelCapaciteSalle<?=$i?>"><?=$row['capaciteSalle']?></label>
+                    <input type="text" name="capacite" id="capaciteSalle<?=$i?>" value="<?=$row['capaciteSalle']?>" style="display:none">
+                  </td>
                   <td class="text-center">
-                    <a href="http://localhost/gestionEmplois/salle/rechercherById/<?=$row['idSalle']?>"  class="btn btn-info">Edite</a> 
-                    <a href="http://localhost/gestionEmplois/salle/delete/<?=$row['idSalle']?>" class="btn btn-danger">Delete</a>
+                    <a class='btn btn-info btn-xs' onclick="edit(<?=$i?>)" id="editButton<?=$i?>"> Edit</a> 
+                    <a href="http://localhost/gestionEmplois/salle/delete/<?=$row['idSalle']?>" id="deleteButton<?=$i?>" class="btn btn-danger btn-xs"> Delete</a>
+                    <input type="submit" class='btn btn-success btn-xs' id="saveButton<?=$i?>" name="update" value="Save" style="display:none"> 
+                    <a onclick="cancel(<?=$i?>)" class="btn btn-warning btn-xs" id="cancelButton<?=$i?>" style="display:none">Cancel</a>
                   </td>
                 </tr>
-            <?php } ?>
+          </form>
+            <?php $i++;} ?>
           </tbody>
         </table>
       </div>
     </div> 
+    <script src="http://localhost/gestionEmplois/view/js/myJS.js"></script>
   </body>
 </html>

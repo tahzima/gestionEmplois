@@ -46,16 +46,25 @@
             </tr>
           </thead>
           <tbody>
-          <?php
+          <?php 
               foreach($resultaffichage as $row){ ?>
             <tr>
-                <td><?=$row['nom']?> <?=$row['prenom']?></td>
-                <td><?=$row['libelleGroupe']?></td>
-                <td><?=$row['libelleSalle']?></td>
-                <td><?=$row['date']?></td>
-                <td><?=$row['heureDebut']?>--><?=$row['heureFin']?></td>
+                <td>
+                  <label><?=$row['nom']?> <?=$row['prenom']?></label>
+                </td>
+                <td>
+                  <label><?=$row['libelleGroupe']?></label>
+                </td>
+                <td>
+                  <label><?=$row['libelleSalle']?></label>
+                </td>
+                <td>
+                  <label><?=$row['date']?></label>
+                </td>
+                <td>
+                  <label><?=$row['heureDebut']?>--><?=$row['heureFin']?></label>
                 <td class="text-center">
-                  <a href="http://localhost/gestionEmplois/reservation/editpage/<?=$row['id']?>"  class="btn btn-info">Edite</a> 
+                  <!-- <a href="http://localhost/gestionEmplois/reservation//<?=$row['id']?>"  class="btn btn-info">Edite</a>  -->
                   <a href="http://localhost/gestionEmplois/reservation/delete/<?=$row['id']?>" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
