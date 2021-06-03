@@ -66,8 +66,8 @@
                   <td class="text-center">
                     <a class='btn btn-info btn-xs' onclick="edit(<?=$i?>)" id="editButton<?=$i?>"> Edit</a> 
                     <a href="http://localhost/gestionEmplois/salle/delete/<?=$row['idSalle']?>" id="deleteButton<?=$i?>" class="btn btn-danger btn-xs"> Delete</a>
-                    <input type="submit" class='btn btn-success btn-xs' id="saveButton<?=$i?>" name="update" value="Save" style="display:none"> 
-                    <a onclick="cancel(<?=$i?>)" class="btn btn-warning btn-xs" id="cancelButton<?=$i?>" style="display:none">Cancel</a>
+                    <input type="submit" class='btn btn-success btn-xs' id="saveButton<?=$i?>" name="update" value="Save" style="display: none;"> 
+                    <a onclick="cancel(<?=$i?>)" class="btn btn-warning btn-xs" id="cancelButton<?=$i?>" style="display: none;">Cancel</a>
                   </td>
                 </tr>
           </form>

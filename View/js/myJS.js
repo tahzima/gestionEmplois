@@ -1,8 +1,8 @@
-$(function () {
-  $("#datetimepicker4").datetimepicker({
-    format: "L",
-  });
-});
+// $(function () {
+//   $("#datetimepicker4").datetimepicker({
+//     format: "L",
+//   });
+// });
 
 var i = 0;
 function addSalle() {
